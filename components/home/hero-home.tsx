@@ -37,8 +37,8 @@ export default function HeroHome({ id }: { id?: string }) {
                 data-aos="zoom-y-out"
                 data-aos-delay={300}
               >
-                Simple is a modern website builder powered by AI that changes
-                how companies create user interfaces together.
+                 Explora una increíble variedad de cervezas artesanales, sírvete exactamente lo que quieras, 
+                cuando quieras y ¡sin esperas! Una experiencia única, divertida y totalmente bajo tu control te espera.            
               </p>             
             </div>
           </div>

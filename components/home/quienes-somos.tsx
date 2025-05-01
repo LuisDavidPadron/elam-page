@@ -6,7 +6,7 @@ import Logo03 from "@/public/images/about/image-3.jpg";
 
 export default function QuienesSomos({ id }: { id?: string }) {
   return (    
-    <section id={id} className="relative mx-auto max-w-6xl px-4 sm:px-6 py-20 lg:py-[120px] dark:bg-dark">
+    <section id={id} className="relative mx-auto max-w-6xl px-4 sm:px-6">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap items-center justify-between">
           <div className="w-full px-4 lg:w-6/12">

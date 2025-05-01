@@ -9,7 +9,7 @@ export default function Contacto({ id }: { id?: string }) {
                 Contactanos
               </span>
               <h2 className="mb-6 text-[32px] font-bold uppercase text-dark sm:text-[40px] lg:text-[36px] xl:text-[40px] dark:text-black">
-                Estas por cervirte tu cerveza
+                Estas por servirte tu cerveza
               </h2>
               <p className="mb-9 text-base leading-relaxed text-body-color dark:text-dark-6">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

@@ -46,6 +46,14 @@ export default function Header() {
               </Link>
             </li>
             <li>
+              <Link              
+                href="#faqs"
+                className="btn-sm bg-white text-gray-800 shadow-sm hover:bg-gray-50"
+              >
+                Preguntas frecuentes
+              </Link>
+            </li>
+            <li>
               <Link
                 href="#contacto"
                 className="btn-sm bg-white text-gray-800 shadow-sm hover:bg-gray-50"
@@ -103,7 +111,7 @@ export default function Header() {
                   Carta
                 </Link>
               </li>
-              
+
               <li>
                 <Link
                   href="#reserva"
