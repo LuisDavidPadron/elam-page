@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Stripes from "@/public/images/stripes-dark.svg";
 
-export default function Cta() {
+export default function Reserva({ id }: { id?: string }) {
   return (
-    <section>
+    <section id={id} className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:py-[120px] dark:bg-dark">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div
           className="relative overflow-hidden rounded-2xl text-center shadow-xl before:pointer-events-none before:absolute before:inset-0 before:-z-10 before:rounded-2xl before:bg-gray-900"
@@ -31,7 +31,7 @@ export default function Cta() {
           </div>
           <div className="px-4 py-12 md:px-12 md:py-20">
             <h2 className="mb-6 border-y text-3xl font-bold text-gray-200 [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-700/.7),transparent)1] md:mb-12 md:text-4xl">
-              Create your next project with Simple
+              Ve a servirte tu cerveza
             </h2>
             <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center">
               <a
@@ -39,7 +39,7 @@ export default function Cta() {
                 href="#0"
               >
                 <span className="relative inline-flex items-center">
-                  Start Free Trial{" "}
+                  Reserva{" "}
                   <span className="ml-1 tracking-normal text-blue-300 transition-transform group-hover:translate-x-0.5">
                     -&gt;
                   </span>
