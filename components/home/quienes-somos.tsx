@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import Logo01 from "@/public/images/about/image-1.jpg";
-import Logo02 from "@/public/images/about/image-2.jpg";
-import Logo03 from "@/public/images/about/image-3.jpg";
+import Logo01 from "@/public/images/about/image-1.jpeg";
+import Logo02 from "@/public/images/about/image-2.jpeg";
+import Logo03 from "@/public/images/about/image-3.jpeg";
 
 export default function QuienesSomos({ id }: { id?: string }) {
   return (    
