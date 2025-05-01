@@ -38,7 +38,7 @@ export default function Header() {
           {/* Desktop sign in links */}
           <ul className="hidden md:flex flex-1 items-center justify-end gap-3">
             <li>
-              <Link              
+              <Link
                 href="#quienes-somos"
                 className="btn-sm bg-white text-gray-800 shadow-sm hover:bg-gray-50"
               >
@@ -46,7 +46,7 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link              
+              <Link
                 href="#faqs"
                 className="btn-sm bg-white text-gray-800 shadow-sm hover:bg-gray-50"
               >
@@ -91,6 +91,14 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Quienes somos
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#faqs"
+                  className="btn-sm bg-white text-gray-800 shadow-sm hover:bg-gray-50"
+                >
+                  Preguntas frecuentes
                 </Link>
               </li>
               <li>
