@@ -10,10 +10,14 @@ import Carta from "@/components/home/carta";
 import Contacto from "@/components/home/contacto";
 import Empresas from "@/components/home/empresas";
 import Faqs from "@/components/home/faq";
+import Header from "@/components/ui/header";
+import Footer from "@/components/ui/footer";
+
 
 export default function Home() {
   return (
-    <>      
+    <>   
+      <Header />   
       <Hero id="principal"/>
       <QuienesSomos id="quienes-somos" />
       <Faqs id="faqs"/>
@@ -21,6 +25,7 @@ export default function Home() {
       <Carta id="carta" />
       <Reserva id="reserva" />
       <Empresas id="empresas" />
+      <Footer border={true} />
     </>
   );
 }
