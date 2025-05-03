@@ -1,12 +1,10 @@
-"use client";
-
-import Image from "next/image";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import Image from "next/image";
 import Logo01 from "@/public/images/LOGO_ELAM.svg";
 
 export default function LinkTree() {
   const bounds: [[number, number]] = [
-    [-33.4522813, -70.6083369], // Coordenada suroeste    
+    [-33.4522813, -70.6083369], // Coordenada suroeste
   ];
 
   return (
@@ -69,15 +67,18 @@ export default function LinkTree() {
       {/* Map Section */}
       <div className="w-full max-w-md mt-8">
         <h2 className="text-xl font-bold mb-4">Encuéntranos aquí</h2>
-        
-        <MapContainer    
+
+        <MapContainer
           bounds={bounds}
-          boundsOptions={{maxZoom: 17}}
+          boundsOptions={{ maxZoom: 17 }}
           style={{ height: "300px", width: "100%" }}
         >
-         <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            options={{
+              attribution:
+                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            }}
           />
           <Marker position={[-33.4522813, -70.6083369]}>
             <Popup>Aquí estamos ubicados. ¡Visítanos!</Popup>
