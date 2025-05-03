@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from "react";
+import "leaflet/dist/leaflet.css";
 
 import AOS from "aos";
 import "aos/dist/aos.css";

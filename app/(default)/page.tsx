@@ -16,7 +16,8 @@ import Footer from "@/components/ui/footer";
 
 export default function Home() {
   return (
-    <>   
+    <>
+      <section className="">
       <Header />   
       <Hero id="principal"/>
       <QuienesSomos id="quienes-somos" />
@@ -26,6 +27,7 @@ export default function Home() {
       <Reserva id="reserva" />
       <Empresas id="empresas" />
       <Footer border={true} />
+      </section>
     </>
   );
 }
