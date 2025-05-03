@@ -74,11 +74,7 @@ export default function LinkTree() {
           style={{ height: "300px", width: "100%" }}
         >
           <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            options={{
-              attribution:
-                '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-            }}
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"            
           />
           <Marker position={[-33.4522813, -70.6083369]}>
             <Popup>Aquí estamos ubicados. ¡Visítanos!</Popup>
