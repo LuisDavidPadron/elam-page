@@ -8,12 +8,11 @@ export default function MapComponent() {
         [-33.4522813, -70.6083369], // Coordenada suroeste
       ];
   return (
-    <MapContainer bounds={bounds} zoom={13} style={{ height: '400px', width: '100%' }}>
+    <MapContainer bounds={bounds} style={{ height: '400px', width: '100%' }}>
       <TileLayer
-        attribution='&copy; OpenStreetMap contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[51.505, -0.09]}>
+      <Marker position={bounds}>
         <Popup>
           Un popup en Leaflet.
         </Popup>
