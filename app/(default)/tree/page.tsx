@@ -1,6 +1,14 @@
+"use client";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import Image from "next/image";
 import Logo01 from "@/public/images/LOGO_ELAM.svg";
+
+import dynamic from 'next/dynamic';
+
+// Cargar dinámicamente el componente del mapa
+const MapComponent = dynamic(() => import('../../../components/map-component'), {
+  ssr: false, // <---- Esto es clave
+});
 
 export default function LinkTree() {
   const bounds: [[number, number]] = [
@@ -68,18 +76,7 @@ export default function LinkTree() {
       <div className="w-full max-w-md mt-8">
         <h2 className="text-xl font-bold mb-4">Encuéntranos aquí</h2>
 
-        <MapContainer
-          bounds={bounds}
-          boundsOptions={{ maxZoom: 17 }}
-          style={{ height: "300px", width: "100%" }}
-        >
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"            
-          />
-          <Marker position={[-33.4522813, -70.6083369]}>
-            <Popup>Aquí estamos ubicados. ¡Visítanos!</Popup>
-          </Marker>
-        </MapContainer>
+        <MapComponent/>
       </div>
     </section>
   );
