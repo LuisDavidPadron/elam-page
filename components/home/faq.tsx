@@ -15,10 +15,10 @@ export default function Faqs({ id }: { id?: string }) {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-[60px] max-w-[520px] text-center lg:mb-20">
-              <span className="mb-2 block text-lg font-semibold text-primary">
+              <span className="mb-2 block text-white text-lg font-semibold text-primary">
                 Preguntas Frecuentes
               </span>
-              <h2 className="mb-4 text-3xl font-bold text-dark sm:text-[40px]/[48px] dark:text-dark">
+              <h2 className="text-white mb-4 text-3xl font-bold text-dark sm:text-[40px]/[48px] dark:text-dark">
                 Que hago 
               </h2>
             </div>

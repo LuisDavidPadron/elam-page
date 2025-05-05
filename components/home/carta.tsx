@@ -23,10 +23,10 @@ export default function Carta({ id }: { id?: string }) {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-[60px] max-w-[510px] text-center">
-              <h2 className="mb-3 text-3xl font-bold leading-[1.208] text-dark sm:text-4xl md:text-[40px]">
+              <h2 className="text-white mb-3 text-3xl font-bold leading-[1.208] text-dark sm:text-4xl md:text-[40px]">
                 Nuestra Carta
               </h2>
-              <p className="text-base text-body-color dark:text-dark-6">
+              <p className="text-white text-base text-body-color dark:text-dark-6">
                 There are many variations of passages of Lorem Ipsum available
                 but the majority have suffered alteration in some form.
               </p>
@@ -44,7 +44,7 @@ export default function Carta({ id }: { id?: string }) {
                   <span className="mb-2 block text-sm font-medium text-primary">
                     {item.category}
                   </span>
-                  <h3 className="mb-5 text-xl font-bold text-dark dark:text-black">
+                  <h3 className="mb-5 text-xl font-bold text-dark text-white">
                     {item.title}
                   </h3>
                 </div>

@@ -26,8 +26,6 @@ export default function LinkTree() {
 
       {/* User Name */}
       <h1 className="text-2xl font-bold mb-2">Bienvenido a ELAM</h1>
-      <p className="text-gray-400 mb-6">Bienvenid@ a mis enlaces 👇</p>
-
       {/* Links */}
       <div className="w-full max-w-md space-y-4">
         <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
@@ -35,12 +33,12 @@ export default function LinkTree() {
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white font-semibold"
+            className="text-white font-semibold cursor-pointer"
           >
             Instagram
           </a>
         </div>
-        <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
+        <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center ">
           <a
             href="https://twitter.com"
             target="_blank"
@@ -50,12 +48,12 @@ export default function LinkTree() {
             Twitter
           </a>
         </div>
-        <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
+        <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center ">
           <a
             href="https://youtube.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white font-semibold"
+            className="text-white font-semibold cursor-pointer"
           >
             YouTube
           </a>
@@ -65,9 +63,9 @@ export default function LinkTree() {
             href="https://tupagina.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white font-semibold"
+            className="text-white font-semibold cursor-pointer"
           >
-            Sitio Web Personal
+            Reserva
           </a>
         </div>
       </div>

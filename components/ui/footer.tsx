@@ -14,7 +14,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
             <div>
               <Logo />
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-white">
               &copy; Cruip.com - All rights reserved.
             </div>
           </div>
@@ -23,11 +23,11 @@ export default function Footer({ border = false }: { border?: boolean }) {
           <div className="text-center sm:col-span-12 lg:col-span-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {/* Product */}
             <div>
-              <h3 className="text-sm font-medium">Product</h3>
+              <h3 className="text-sm font-medium text-white">Product</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link
-                    className="text-gray-600 transition hover:text-gray-900"
+                    className="text-white transition hover:text-white"
                     href="#0"
                   >
                     Features
@@ -35,7 +35,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 </li>
                 <li>
                   <Link
-                    className="text-gray-600 transition hover:text-gray-900"
+                    className="text-white transition hover:text-white"
                     href="#0"
                   >
                     Integrations
@@ -43,7 +43,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 </li>
                 <li>
                   <Link
-                    className="text-gray-600 transition hover:text-gray-900"
+                    className="text-white transition hover:text-white"
                     href="#0"
                   >
                     Pricing & Plans
@@ -51,7 +51,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 </li>
                 <li>
                   <Link
-                    className="text-gray-600 transition hover:text-gray-900"
+                    className="text-white transition hover:text-white"
                     href="#0"
                   >
                     Changelog
@@ -59,7 +59,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 </li>
                 <li>
                   <Link
-                    className="text-gray-600 transition hover:text-gray-900"
+                    className="text-white transition hover:text-gray-600"
                     href="#0"
                   >
                     Our method
@@ -70,11 +70,11 @@ export default function Footer({ border = false }: { border?: boolean }) {
 
             {/* Company */}
             <div>
-              <h3 className="text-sm font-medium">Company</h3>
+              <h3 className="text-sm font-medium text-white">Company</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link
-                    className="text-gray-600 transition hover:text-gray-900"
+                    className="text-white transition hover:text-gray-600"
                     href="#0"
                   >
                     About us
@@ -82,7 +82,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 </li>
                 <li>
                   <Link
-                    className="text-gray-600 transition hover:text-gray-900"
+                    className="text-white transition hover:text-gray-600"
                     href="#0"
                   >
                     Diversity & Inclusion
@@ -90,7 +90,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 </li>
                 <li>
                   <Link
-                    className="text-gray-600 transition hover:text-gray-900"
+                    className="text-white transition hover:text-gray-600"
                     href="#0"
                   >
                     Blog
@@ -98,7 +98,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 </li>
                 <li>
                   <Link
-                    className="text-gray-600 transition hover:text-gray-900"
+                    className="text-white transition hover:text-gray-600"
                     href="#0"
                   >
                     Careers
@@ -106,7 +106,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 </li>
                 <li>
                   <Link
-                    className="text-gray-600 transition hover:text-gray-900"
+                    className="text-white transition hover:text-gray-600"
                     href="#0"
                   >
                     Financial statements
@@ -117,11 +117,11 @@ export default function Footer({ border = false }: { border?: boolean }) {
 
             {/* Resources */}
             <div>
-              <h3 className="text-sm font-medium">Resources</h3>
+              <h3 className="text-sm font-medium text-white">Resources</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link
-                    className="text-gray-600 transition hover:text-gray-900"
+                    className="text-white transition hover:text-gray-600"
                     href="#0"
                   >
                     Community
@@ -129,7 +129,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 </li>
                 <li>
                   <Link
-                    className="text-gray-600 transition hover:text-gray-900"
+                    className="text-white transition hover:text-gray-600"
                     href="#0"
                   >
                     Terms of service
@@ -137,7 +137,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 </li>
                 <li>
                   <Link
-                    className="text-gray-600 transition hover:text-gray-900"
+                    className="text-white transition hover:text-gray-600"
                     href="#0"
                   >
                     Report a vulnerability
@@ -148,7 +148,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
 
             {/* Social */}
             <div>
-              <h3 className="text-sm font-medium">Social</h3>
+              <h3 className="text-sm font-medium text-white">Social</h3>
               <ul className="flex justify-center sm:justify-start gap-4">
                 <li>
                   <Link

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import PageIllustration from "@/components/page-illustration";
 import Logo01 from "@/public/images/LOGO_ELAM.svg";
+import Logo from "@/public/images/Logo vector.svg";
 import Avatar02 from "@/public/images/avatar-02.jpg";
 import Avatar03 from "@/public/images/avatar-03.jpg";
 import Avatar04 from "@/public/images/avatar-04.jpg";
@@ -18,22 +19,22 @@ export default function HeroHome({ id }: { id?: string }) {
           <div className="text-center">
               <Image
                 className="mx-auto relative"
-                src={Logo01}
+                src={Logo}
                 height={100}
                 width={400}
                 alt="Logo 01"
               />
             <h1
-              className="mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1] md:text-6xl"
+              className="text-white mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1] md:text-6xl"
               data-aos="zoom-y-out"
               data-aos-delay={150}
             >
-              Tu Cerveza, Tu Ritmo<br className="max-lg:hidden" />
+              Tu Cerveza, Tu Ritmo<br className="max-lg:hidden text-white" />
               Descubre el Autoservicio Cervecero
             </h1>
             <div className="mx-auto max-w-3xl">
               <p
-                className="mb-8 text-lg text-gray-700"
+                className="mb-8 text-lg text-white"
                 data-aos="zoom-y-out"
                 data-aos-delay={300}
               >
