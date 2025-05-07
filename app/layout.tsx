@@ -20,13 +20,9 @@ export default function RootLayout({
 }) {
   const [isLoading, setIsLoading] = useState(true); // State to manage loading
 
-  useEffect(() => {
-    // Simulate loading process
-    const timer = setTimeout(() => {
-      setIsLoading(false); // Set loading to false after 2 seconds
-    }, 2000);
-
-    return () => clearTimeout(timer); // Cleanup timeout on unmount
+  useEffect(() => {        
+    setIsLoading(false); // Set loading to false after 2 seconds
+    return;
   }, []);
 
   return (
