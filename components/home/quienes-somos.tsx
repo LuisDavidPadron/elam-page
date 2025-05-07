@@ -33,7 +33,14 @@ export default function QuienesSomos({ id }: { id?: string }) {
                         className="w-full rounded-2xl"                                                
                         src={Logo03}                    
                         alt="Logo 03"
-                    />                    
+                    />  
+                    <div className="py-3 sm:py-4">
+                        <Image
+                            className="w-full rounded-2xl"
+                            src={Logo01}                    
+                            alt="Logo 01"
+                        />                  
+                    </div>                  
                   <span className="absolute -bottom-7 -right-7 z-[-1]">
                     <svg width="134" height="106" viewBox="0 0 134 106" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="1.66667" cy="104" r="1.66667" transform="rotate(-90 1.66667 104)" fill="#3056D3" />

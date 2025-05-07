@@ -27,13 +27,13 @@ export default function Home() {
           alt="Background Pattern"
           layout="fill" // Ensures the image fills the entire container
         />
-        {/* Page content */}
+        {/* Page content */}        
         <Header />
         <Hero id="principal" />
         <QuienesSomos id="quienes-somos" />
+        <Carta id="carta" />
         <Faqs id="faqs" />
         {/* <Contacto id="contacto" /> */}
-        <Carta id="carta" />
         <Reserva id="reserva" />
         <Empresas id="empresas" />
         <Footer border={true} />
