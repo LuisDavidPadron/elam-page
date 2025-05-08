@@ -30,7 +30,7 @@ export default function LinkTree() {
       <div className="w-full max-w-md space-y-4">
         <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/elambeergarden/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white font-semibold cursor-pointer"
@@ -60,7 +60,7 @@ export default function LinkTree() {
         </div>
         <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
           <a
-            href="https://tupagina.com"
+            href="http://www.elambeergarden.cl/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white font-semibold cursor-pointer"
