@@ -38,29 +38,19 @@ export default function LinkTree() {
             Instagram
           </a>
         </div>
-        <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center ">
+        <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
           <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white font-semibold"
-          >
-            Twitter
-          </a>
-        </div>
-        <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center ">
-          <a
-            href="https://youtube.com"
+            href="http://elambeergarden.cl/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white font-semibold cursor-pointer"
           >
-            YouTube
+            Nuestra web
           </a>
         </div>
         <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
           <a
-            href="http://www.elambeergarden.cl/"
+            href="https://wokiapp.com/reservas/elam-beer-garden"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white font-semibold cursor-pointer"
