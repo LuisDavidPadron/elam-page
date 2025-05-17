@@ -58,6 +58,16 @@ export default function LinkTree() {
             Reserva
           </a>
         </div>
+        <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
+          <a
+            href="https://drive.google.com/file/d/1keYaCpnRMF6--netiZyXOwnrqij3R5ya/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white font-semibold cursor-pointer"
+          >
+            Carta
+          </a>
+        </div>
       </div>
 
       {/* Map Section */}
