@@ -40,12 +40,12 @@ export default function LinkTree() {
         </div>
         <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
           <a
-            href="http://elambeergarden.cl/"
+            href="https://maps.app.goo.gl/eGfGBa4UcoVgr47c9"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white font-semibold cursor-pointer"
           >
-            Nuestra web
+            Como llegar aqui
           </a>
         </div>
         <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
