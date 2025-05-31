@@ -93,19 +93,19 @@ export default function Empresas({ id }: { id?: string }) {
     >
       <div className="container mx-auto">
         <div
-          className="py-5 px-5 relative overflow-hidden rounded-2xl text-center shadow-xl before:pointer-events-none before:absolute before:inset-0 before:-z-10 before:rounded-2xl before:bg-blue-900"
+          className="py-5 px-5 relative overflow-hidden rounded-2xl text-center shadow-xl before:pointer-events-none before:absolute before:inset-0 before:-z-10 before:rounded-2xl before:color-yellow"
           data-aos="zoom-y-out"
         >
-          <div className="-mx-4 flex flex-wrap">
+          <div className="-mx-4 my-10 flex flex-wrap">
             <div className="w-full px-4">
               <div className="mx-auto mb-[60px] max-w-[510px] text-center">
-                <h2 className="mb-6 border-y text-3xl font-bold text-gray-200 [border-image:linear-gradient(to_right,transparent,--theme(--color-blue-300/.7),transparent)1] md:mb-12 md:text-4xl">
+                <h2 className="mb-6 border-y text-3xl font-bold text-black [border-image:linear-gradient(to_right,transparent,black,transparent)1] md:mb-12 md:text-4xl">
                 Trabajamos
                 </h2>                
               </div>
             </div>
           </div>
-          <Swiper
+          <Swiper            
             modules={[Autoplay, Pagination]}
             loop={true}
             autoplay={{
@@ -119,7 +119,7 @@ export default function Empresas({ id }: { id?: string }) {
               1024: { slidesPerView: 5, spaceBetween: 50 },
               1280: { slidesPerView: 6, spaceBetween: 50 },
             }}
-            className="mySwiper"
+            className="mySwiper p-7"
           >
             {empresas.map((empresa) => (
               <SwiperSlide

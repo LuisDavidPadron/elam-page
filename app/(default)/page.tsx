@@ -1,3 +1,4 @@
+
 export const metadata = {
   title: "Home - Simple",
   description: "Page description",
@@ -15,18 +16,18 @@ import Footer from "@/components/ui/footer";
 import PatronExtendido1 from "@/public/images/patron expandido 3-01.svg";
 import PatronExtendido from "@/public/images/patron_expandido.svg";
 
-export default function Home() {
+export default function Home() {   
   return (
     <>
       {/* Full background wrapper */}
-      <div className="relative w-full">
+      <div className="relative w-full color-yellow">
         {/* Full background image */}
-        <Image
+        {/* <Image
           className="absolute inset-0 -z-10 h-full w-full object-cover"
           src={PatronExtendido}
           alt="Background Pattern"
           layout="fill" // Ensures the image fills the entire container
-        />
+        /> */}
         {/* Page content */}        
         <Header />
         <Hero id="principal" />

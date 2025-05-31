@@ -197,3 +197,7 @@
     border-color: var(--color-gray-200, currentColor);
   }
 }
+
+.color-yellow {
+  background-color: #CC9C3B;
+}

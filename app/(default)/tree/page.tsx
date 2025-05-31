@@ -2,6 +2,9 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import Image from "next/image";
 import Logo01 from "@/public/images/LOGO_ELAM.svg";
+import { FaBeer, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { AiOutlineCar } from "react-icons/ai";
+
 
 import dynamic from 'next/dynamic';
 
@@ -18,6 +21,7 @@ export default function LinkTree() {
   return (
     <section className="flex flex-col items-center min-h-screen bg-gray-900 text-white p-8">
       {/* Avatar */}
+
       <Image
         className="w-30 bg-white h-30 rounded-full border-4 border-blue-500 mb-6"
         src={Logo01}
@@ -25,7 +29,7 @@ export default function LinkTree() {
       />
 
       {/* User Name */}
-      <h1 className="text-2xl font-bold mb-2">Bienvenido a ELAM</h1>
+      <h1 className="text-2xl font-bold mb-2">Bienvenido a ELAM</h1>                       
       {/* Links */}
       <div className="w-full max-w-md space-y-4">
         <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
@@ -33,9 +37,10 @@ export default function LinkTree() {
             href="https://www.instagram.com/elambeergarden/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white font-semibold cursor-pointer"
+            className="text-white font-semibold cursor-pointer inline-flex items-center gap-2 justify-center"
           >
             Instagram
+            <FaInstagram />
           </a>
         </div>
         <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
@@ -43,9 +48,9 @@ export default function LinkTree() {
             href="https://maps.app.goo.gl/eGfGBa4UcoVgr47c9"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white font-semibold cursor-pointer"
+            className="text-white font-semibold cursor-pointer inline-flex items-center gap-2 justify-center"
           >
-            Como llegar aqui
+            Como llegar aqui <AiOutlineCar />
           </a>
         </div>
         <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
@@ -68,6 +73,16 @@ export default function LinkTree() {
             Carta
           </a>
         </div>
+        {/* <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
+          <a
+            href="https://drive.google.com/file/d/1x9qcR3XOR_zX9H9nRpP0YNHHLIjEO-gK/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white font-semibold cursor-pointer inline-flex items-center gap-2 justify-center"
+          >
+            Escribenos <FaWhatsapp/>
+          </a>
+        </div> */}
       </div>
 
       {/* Map Section */}

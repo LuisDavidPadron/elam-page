@@ -15,10 +15,10 @@ export default function Faqs({ id }: { id?: string }) {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-[60px] max-w-[520px] text-center lg:mb-20">
-              <span className="mb-2 block text-white text-lg font-semibold text-primary">
+              <span className="mb-2 block text-black text-lg font-semibold text-primary">
                 Preguntas Frecuentes
               </span>
-              <h2 className="text-white mb-4 text-3xl font-bold text-dark sm:text-[40px]/[48px] dark:text-dark">
+              <h2 className="text-black mb-4 text-3xl font-bold text-dark sm:text-[40px]/[48px] dark:text-dark">
                 Que hago 
               </h2>
             </div>
@@ -32,7 +32,7 @@ export default function Faqs({ id }: { id?: string }) {
               key={index}
               className="w-full px-4 lg:w-1/2 mb-8"
             >
-              <div className="rounded-lg bg-white p-4 shadow-[0px_20px_95px_0px_rgba(201,203,204,0.30)] sm:p-8 lg:px-6 xl:px-8 dark:bg-dark-2 dark:shadow-[0px_20px_95px_0px_rgba(0,0,0,0.30)]">
+              <div className="rounded-lg color-yellow p-4 shadow-[0px_20px_95px_0px_rgba(201,203,204,0.30)] sm:p-8 lg:px-6 xl:px-8 dark:bg-dark-2 dark:shadow-[0px_20px_95px_0px_rgba(0,0,0,0.30)]">
                 <button
                   className="faq-btn flex w-full text-left"
                   onClick={() => toggleFaq(index)}

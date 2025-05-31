@@ -5,7 +5,8 @@ import React, { useEffect, useState } from "react";
 import { Inter } from "next/font/google";
 import LoadingSpinner from "@/components/ui/loading-spinner";
 import Image from "next/image";
-import PatronExtendido from "@/public/images/patron expandido 3-01.svg";
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,7 +21,12 @@ export default function RootLayout({
 }) {
   const [isLoading, setIsLoading] = useState(true); // State to manage loading
 
-  useEffect(() => {        
+  useEffect(() => {         
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true, // solo anima una vez
+    });  
     setIsLoading(false); // Set loading to false after 2 seconds
     return;
   }, []);
@@ -36,14 +42,7 @@ export default function RootLayout({
           <div
             id="loading-spinner"
             className="relative w-full h-screen overflow-hidden"
-          >
-            {/* Full background image */}
-            <Image
-              className="absolute inset-0 -z-10 object-cover"
-              src={ PatronExtendido }
-              alt="Background Pattern"
-              fill // Replaces layout="fill"
-            />
+          >          
             {/* Loading spinner */}
             <div className="flex items-center justify-center h-full">
               <LoadingSpinner />

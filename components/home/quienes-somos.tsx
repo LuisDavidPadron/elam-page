@@ -181,22 +181,23 @@ export default function QuienesSomos({ id }: { id?: string }) {
           <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
             <div className="mt-10 lg:mt-0">
               <h1
-                className="text-white mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1] md:text-6xl"             
+                className="text-black mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1] md:text-6xl"             
               >
                 Quienes Somos
               </h1>              
-              <p className="text-white mb-5 text-base text-body-color">
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout.
-                The point of using Lorem Ipsum is that it has a more-or-less.
+              <p className="text-black mb-5 text-base text-body-color">
+                En Elam Beer Garden no solo servimos cerveza, creamos experiencias. 
+                Somos un bar cervecero moderno ubicado en Ñuñoa, nacido del amor por la cerveza artesanal, la innovación y el buen ambiente. 
+                Nuestro espacio combina lo mejor de un jardín urbano con tecnología de punta para que cada visita sea única. 
+                Somos los primeros en Chile en implementar MyTapp, un sistema self-service con inteligente que permite a cada persona explorar, servirse y descubrir nuevas cervezas a su ritmo. 
               </p>
-              <p className="text-white mb-8 text-base text-body-color">
-                A domain name is one of the first steps to establishing your
-                brand. Secure a consistent brand image with a domain name that
-                matches your business.
+              <p className="text-black mb-8 text-base text-body-color">                
+                Contamos con 21 líneas de cerveza artesanal, cuidadosamente seleccionadas para representar lo mejor de la escena naciona. 
+                Creemos en la comunidad, en compartir una buena pinta entre amigos, en apoyar a cervecerías independientes y en ofrecer un lugar donde la calidad y la creatividad son parte del ADN. 
+                Elam es ese punto de encuentro donde las buenas conversaciones, la música, la comida y, por supuesto, la cerveza, se juntan para dar vida a una experiencia cervecera como ninguna otra en Santiago.
               </p>
               <a href="javascript:void(0)"
-                className=" inline-flex items-center justify-center rounded-md border border-transparent bg-primary px-7 py-3 text-center text-base font-medium text-white hover:bg-blue-200/90">
+                className=" inline-flex items-center justify-center rounded-md border border-transparent bg-primary px-7 py-3 text-center text-base font-medium text-black hover:bg-blue-200/90">
                 Visitanos
               </a>
             </div>
