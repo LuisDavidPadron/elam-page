@@ -32,42 +32,33 @@ export default function LinkTree() {
       <h1 className="text-2xl font-bold mb-2">Bienvenido a ELAM</h1>                       
       {/* Links */}
       <div className="w-full max-w-md space-y-4">
-        <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
-          <a
-            href="https://www.instagram.com/elambeergarden/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white font-semibold cursor-pointer inline-flex items-center gap-2 justify-center"
-          >
+        <div 
+          onClick={() => window.open("https://www.instagram.com/elambeergarden/", "_blank")} 
+          className="cursor-pointer link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center"
+        >
+          <a className="text-white font-semibold cursor-pointer inline-flex items-center gap-2 justify-center">
             Instagram
             <FaInstagram />
           </a>
         </div>
-        <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
-          <a
-            href="https://maps.app.goo.gl/eGfGBa4UcoVgr47c9"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white font-semibold cursor-pointer inline-flex items-center gap-2 justify-center"
-          >
+        <div 
+          onClick={() => window.open("https://maps.app.goo.gl/eGfGBa4UcoVgr47c9", "_blank")} 
+          className="cursor-pointer link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center"
+        >
+          <a className="text-white font-semibold cursor-pointer inline-flex items-center gap-2 justify-center">
             Como llegar aqui <AiOutlineCar />
           </a>
         </div>
-        <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
-          <a
-            href="https://wokiapp.com/reservas/elam-beer-garden"
-            target="_blank"
-            rel="noopener noreferrer"
+        <div 
+          onClick={() => window.open("https://wokiapp.com/reservas/elam-beer-garden", "_blank")} className="cursor-pointer link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
+          <a            
             className="text-white font-semibold cursor-pointer"
           >
             Reserva
           </a>
         </div>
-        <div className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
+        <div onClick={() => window.open("https://drive.google.com/file/d/1x9qcR3XOR_zX9H9nRpP0YNHHLIjEO-gK/view?usp=drive_link", "_blank")} className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center cursor-pointer">
           <a
-            href="https://drive.google.com/file/d/1x9qcR3XOR_zX9H9nRpP0YNHHLIjEO-gK/view?usp=drive_link"
-            target="_blank"
-            rel="noopener noreferrer"
             className="text-white font-semibold cursor-pointer"
           >
             Carta
