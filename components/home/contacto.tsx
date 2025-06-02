@@ -27,32 +27,17 @@ export default function Contacto({ id }: { id?: string }) {
       return;
     }
 
-    // await fetch('https://api.resend.com/emails', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Authorization': 'Bearer re_J87xenqT_4asiDc6dYgpxbhHW7N6ReHjf', // tu API Key
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify({
-    //     from: form.nombre,
-    //     to: 'administrador@elambeergarden.cl',
-    //     replyTo: '' + form.email,
-    //     subject: 'Contacto desde Elam Beer Garden',
-    //     text: `Nombre: ${form.nombre}\nCorreo: ${form.email}\nMensaje: ${form.mensaje}`
-    //   })
-    // })
-    // .then(res => res.json())
-    // .then(console.log)
-    // .catch(console.error);
+    // Aquí puedes enviar el formulario a tu API o servicio de correo
+    await fetch('/api/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        nombre: form.nombre,
+        email: form.email,
+        mensaje: form.mensaje,
+      }),
+    });
 
-    // await resend.emails.send({
-    //   from: form.nombre,
-    //   to: 'administrador@elambeergarden.cl',
-    //   replyTo: '' + form.email,
-    //   subject: 'Contacto desde Elam Beer Garden',
-    //   text: `Nombre: ${form.nombre}\nCorreo: ${form.email}\nMensaje: ${form.mensaje}`
-    // });
-    // Aquí puedes enviar los datos a tu backend o servicio de correo
     console.log(form);
     // Ejemplo: fetch("/api/contact", { method: "POST", body: JSON.stringify(form) })
   };
