@@ -1,11 +1,6 @@
 "use client"
 // This file is part of the Elam Beer Garden project. 
 import React, { useState } from "react";
-import { Resend } from 'resend';
-
-const resendApiKey = process.env.NEXT_PUBLIC_RESEND_API_KEY;
-
-const resend = new Resend(resendApiKey);
 
 export default function Contacto({ id }: { id?: string }) {
     const [form, setForm] = useState({
@@ -50,13 +45,13 @@ export default function Contacto({ id }: { id?: string }) {
     // .then(console.log)
     // .catch(console.error);
 
-    await resend.emails.send({
-      from: form.nombre,
-      to: 'administrador@elambeergarden.cl',
-      replyTo: '' + form.email,
-      subject: 'Contacto desde Elam Beer Garden',
-      text: `Nombre: ${form.nombre}\nCorreo: ${form.email}\nMensaje: ${form.mensaje}`
-    });
+    // await resend.emails.send({
+    //   from: form.nombre,
+    //   to: 'administrador@elambeergarden.cl',
+    //   replyTo: '' + form.email,
+    //   subject: 'Contacto desde Elam Beer Garden',
+    //   text: `Nombre: ${form.nombre}\nCorreo: ${form.email}\nMensaje: ${form.mensaje}`
+    // });
     // Aquí puedes enviar los datos a tu backend o servicio de correo
     console.log(form);
     // Ejemplo: fetch("/api/contact", { method: "POST", body: JSON.stringify(form) })
