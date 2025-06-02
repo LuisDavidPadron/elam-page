@@ -21,7 +21,6 @@ export default async function handler(
     const data = await resend.emails.send({
       from: "Elam Contacto <administrador@elambeergarden.cl>",
       to: "administrador@elambeergarden.cl",
-      replyTo: email,
       subject: "Contacto desde Elam Beer Garden",
       text: `Nombre: ${nombre}\nCorreo: ${email}\nMensaje: ${mensaje}`,
     });
