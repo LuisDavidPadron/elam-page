@@ -27,16 +27,26 @@ export default function Contacto({ id }: { id?: string }) {
       return;
     }
 
-    // Aquí puedes enviar el formulario a tu API o servicio de correo
-    await fetch('/api/send-email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
         nombre: form.nombre,
         email: form.email,
         mensaje: form.mensaje,
-      }),
     });
+
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow" as RequestRedirect
+    };
+
+    fetch("https://www.elambeergarden.cl/api/send-mail", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.error(error));
 
     console.log(form);
     // Ejemplo: fetch("/api/contact", { method: "POST", body: JSON.stringify(form) })
