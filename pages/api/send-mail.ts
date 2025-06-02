@@ -19,7 +19,7 @@ export default async function handler(
 
   try {
     const data = await resend.emails.send({
-      from: "Elam Contacto <no-reply@elambeergarden.cl>",
+      from: "Elam Contacto <administrador@elambeergarden.cl>",
       to: "administrador@elambeergarden.cl",
       replyTo: email,
       subject: "Contacto desde Elam Beer Garden",
