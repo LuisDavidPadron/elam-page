@@ -41,8 +41,8 @@ export default function RootLayout({
         {isLoading ? (
           <div
             id="loading-spinner"
-            className="relative w-full h-screen overflow-hidden"
-          >          
+            className="relative w-full h-screen overflow-hidden color-yellow"
+          >
             {/* Loading spinner */}
             <div className="flex items-center justify-center h-full">
               <LoadingSpinner />

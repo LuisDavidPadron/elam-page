@@ -34,7 +34,7 @@ export default function Home() {
         <QuienesSomos id="quienes-somos" />
         <Carta id="carta" />
         <Faqs id="faqs" />
-        {/* <Contacto id="contacto" /> */}
+        <Contacto id="contacto" />
         <Reserva id="reserva" />
         <Empresas id="empresas" />
         <Footer border={true} />

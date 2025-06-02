@@ -189,10 +189,10 @@ export default function QuienesSomos({ id }: { id?: string }) {
                 En Elam Beer Garden no solo servimos cerveza, creamos experiencias. 
                 Somos un bar cervecero moderno ubicado en Ñuñoa, nacido del amor por la cerveza artesanal, la innovación y el buen ambiente. 
                 Nuestro espacio combina lo mejor de un jardín urbano con tecnología de punta para que cada visita sea única. 
-                Somos los primeros en Chile en implementar MyTapp, un sistema self-service con inteligente que permite a cada persona explorar, servirse y descubrir nuevas cervezas a su ritmo. 
+                Somos los primeros en Chile en implementar MyTapp, un sistema self-service inteligente que permite a cada persona explorar, servirse y descubrir nuevas cervezas a su ritmo. 
               </p>
               <p className="text-black mb-8 text-base text-body-color">                
-                Contamos con 21 líneas de cerveza artesanal, cuidadosamente seleccionadas para representar lo mejor de la escena naciona. 
+                Contamos con 21 líneas de cerveza artesanal, cuidadosamente seleccionadas para representar lo mejor de la escena nacional. 
                 Creemos en la comunidad, en compartir una buena pinta entre amigos, en apoyar a cervecerías independientes y en ofrecer un lugar donde la calidad y la creatividad son parte del ADN. 
                 Elam es ese punto de encuentro donde las buenas conversaciones, la música, la comida y, por supuesto, la cerveza, se juntan para dar vida a una experiencia cervecera como ninguna otra en Santiago.
               </p>
