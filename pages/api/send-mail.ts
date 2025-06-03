@@ -1,7 +1,6 @@
-import { Resend } from "resend";
-import type { NextApiRequest, NextApiResponse } from "next";
+import nodemailer from "nodemailer";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
   req: NextApiRequest,
@@ -17,20 +16,29 @@ export default async function handler(
     return res.status(400).json({ error: "Missing required fields" });
   }
 
+  // Configure transport (use your SMTP credentials)
+  const transporter = nodemailer.createTransport({
+    host: "smtp.zoho.com",
+    secure: true,
+    port: 465,
+    auth: {
+      user: "administrador@elambeergarden.cl",
+      pass: "nodemailer",
+    },
+  });
+
   try {
-    const data = await resend.emails.send({
-      from: "Elam Contacto <administrador@elambeergarden.cl>",
-      to: "administrador@elambeergarden.cl",
-      subject: "Contacto desde Elam Beer Garden",
-      text: `Nombre: ${nombre}\nCorreo: ${email}\nMensaje: ${mensaje}`,
+    const info = await transporter.sendMail({
+      from: '"Your App" <administrador@emlambeergarden.cl>',
+      to: email, // recipient email
+      replyTo: "administrador@elambeergarden.cl",
+      subject: `Mensaje de ${nombre} desde el Am Beer Garden`,
+      text: mensaje, // or html
     });
 
-    return res.status(200).json({ success: true, data });
+    return res.status(200).json({ message: "Email sent successfully", info });
   } catch (err) {
-    const errorMessage =
-      err && typeof err === "object" && "message" in err
-        ? err.message
-        : "An unknown error occurred";
-    return res.status(500).json({ error: errorMessage });
+    console.error("Error sending email:", err);
+    return res.status(500).json({ error: "Failed to send email" });
   }
 }
