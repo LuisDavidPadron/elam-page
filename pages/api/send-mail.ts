@@ -22,8 +22,8 @@ export default async function handler(
     secure: true,
     port: 465,
     auth: {
-      user: "administrador@elambeergarden.cl",
-      pass: "sN2cFyxphh0s",
+      user: process.env.ZOHO_MAIL,
+      pass: process.env.APP_PASSWORD_ZOHO, // Use environment variable for security
     },
   });
 
