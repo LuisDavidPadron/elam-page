@@ -23,7 +23,7 @@ export default async function handler(
     port: 465,
     auth: {
       user: "administrador@elambeergarden.cl",
-      pass: "nodemailer",
+      pass: "sN2cFyxphh0s",
     },
   });
 
