@@ -16,6 +16,11 @@ export default async function handler(
     return res.status(400).json({ error: "Missing required fields" });
   }
 
+  console.warn("Received email:", email);
+
+  console.warn("ZOHO_MAIL:", process.env.ZOHO_MAIL);
+  console.warn("APP_PASSWORD_ZOHO:", process.env.APP_PASSWORD_ZOHO);
+
   // Configure transport (use your SMTP credentials)
   const transporter = nodemailer.createTransport({
     host: "smtp.zoho.com",
