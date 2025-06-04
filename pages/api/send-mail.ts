@@ -31,7 +31,10 @@ export default async function handler(
       `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_KEY}&response=${captcha}`,
       { method: "POST" }
     );
+
     const data = await response.json();
+
+    console.warn("CAPTCH sent: %s", data);
 
     if (!data.success) {
       return res.status(400).json({ error: "Captcha inválido" });
@@ -44,6 +47,8 @@ export default async function handler(
       subject: `Mensaje de ${nombre} desde ELAM Beer Garden`,
       text: mensaje, // or html
     });
+
+    console.warn("Message sent: %s", info);
 
     return res.status(200).json({ message: "Email sent successfully" });
   } catch (err) {
