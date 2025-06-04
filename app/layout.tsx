@@ -7,6 +7,7 @@ import LoadingSpinner from "@/components/ui/loading-spinner";
 import Image from "next/image";
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -50,9 +51,11 @@ export default function RootLayout({
           </div>
         ) : (
           <div id="content">
-            <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
-              {children}
-            </div>
+            <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA || "6LddRVUrAAAAAC9OL6maOBD_dzEO6sJtH8E-A6pe"}>
+              <div className="flex min-h-screen flex-col overflow-hidden supports-[overflow:clip]:overflow-clip">
+                {children}
+              </div>
+            </GoogleReCaptchaProvider>
           </div>
         )}
       </body>

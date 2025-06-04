@@ -33,10 +33,8 @@ export default function Home() {
         <Hero id="principal" />
         <QuienesSomos id="quienes-somos" />
         <Carta id="carta" />
-        <Faqs id="faqs" />
-        <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA || "6LddRVUrAAAAAC9OL6maOBD_dzEO6sJtH8E-A6pe"}>
-          <Contacto id="contacto" />
-        </GoogleReCaptchaProvider>
+        <Faqs id="faqs" />        
+        <Contacto id="contacto" />        
         <Reserva id="reserva" />
         <Empresas id="empresas" />
         <Footer border={true} />
