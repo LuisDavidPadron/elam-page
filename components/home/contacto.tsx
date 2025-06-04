@@ -1,34 +1,28 @@
 "use client"
 // This file is part of the Elam Beer Garden project. 
 import React, { useState, useRef } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
+import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 export default function Contacto({ id }: { id?: string }) {
+    const { executeRecaptcha } = useGoogleReCaptcha();
+
     const [form, setForm] = useState({
     nombre: "",
     email: "",
     mensaje: "",
   });
 
-  const [captcha, setCaptcha] = useState<string | null>(null);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
-
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {    
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleCaptcha = (value: string | null) => {
-    setCaptcha(value);
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-     if (!captcha) {
-      alert("Por favor, verifica el captcha.");
-      return;
-    }
+    if (!executeRecaptcha) return;
+
+    const captcha = await executeRecaptcha("submit");
 
     // Validación simple
     if (!form.nombre || !form.email || !form.mensaje) {
@@ -109,19 +103,15 @@ export default function Contacto({ id }: { id?: string }) {
                   ></textarea>
                 </div>
                 <div>
-                  <ReCAPTCHA
-                    ref={recaptchaRef}
-                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA || "6LddRVUrAAAAAC9OL6maOBD_dzEO6sJtH8E-A6pe"}
-                    onChange={handleCaptcha}
-                    className="my-4"
-                  />
-                  
-                  <button
+                  <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA || "6LddRVUrAAAAAC9OL6maOBD_dzEO6sJtH8E-A6pe"}>
+                    <button
                     type="submit"
                     className="cursor-pointer w-full rounded-sm border border-primary bg-primary p-3 text-black transition hover:bg-primary/90"
                   >
                     Enviar Mensaje
                   </button>
+                  </GoogleReCaptchaProvider>
+                 
                 </div>
               </form>
               <div>
