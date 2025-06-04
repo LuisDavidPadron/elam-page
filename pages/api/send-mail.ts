@@ -36,11 +36,11 @@ export default async function handler(
     const info = await transporter.sendMail({
       from: `"ELAM" <> ${process.env.ZOHO_MAIL}`,
       to: email, // recipient email
-      subject: `Mensaje de ${nombre} desde el Am Beer Garden`,
+      subject: `Mensaje de ${nombre} desde ELAM Beer Garden`,
       text: mensaje, // or html
     });
 
-    return res.status(200).json({ message: "Email sent successfully", info });
+    return res.status(200).json({ message: "Email sent successfully" });
   } catch (err) {
     console.error("Error sending email:", err);
     return res.status(500).json({ error: "Failed to send email" });
