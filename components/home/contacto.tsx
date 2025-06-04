@@ -13,7 +13,6 @@ export default function Contacto({ id }: { id?: string }) {
     mensaje: "",
   });
 
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {    
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -58,6 +57,12 @@ export default function Contacto({ id }: { id?: string }) {
       .then((response) => response.text())
       .then((result) => {
         alert("Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.");
+        setForm({
+          nombre: "",
+          email: "",
+          mensaje: "",
+        });
+
         setIsLoading(false);
       })
       .catch((error) =>{
