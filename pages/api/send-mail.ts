@@ -34,9 +34,8 @@ export default async function handler(
 
   try {
     const info = await transporter.sendMail({
-      from: '"Your App" <administrador@emlambeergarden.cl>',
+      from: '"ELAM" <contacto@emlambeergarden.cl>',
       to: email, // recipient email
-      replyTo: "administrador@elambeergarden.cl",
       subject: `Mensaje de ${nombre} desde el Am Beer Garden`,
       text: mensaje, // or html
     });
