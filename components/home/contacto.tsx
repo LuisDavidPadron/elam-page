@@ -1,7 +1,7 @@
 "use client"
 // This file is part of the Elam Beer Garden project. 
 import React, { useState, useRef } from "react";
-import { GoogleReCaptchaProvider, useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 export default function Contacto({ id }: { id?: string }) {
     const { executeRecaptcha } = useGoogleReCaptcha();
@@ -102,16 +102,13 @@ export default function Contacto({ id }: { id?: string }) {
                     className="w-full resize-none rounded-sm border border-stroke px-[14px] py-3 text-base color-yellow outline-hidden focus:border-primary dark:border-dark-3 dark:bg-dark dark:text-dark-6"
                   ></textarea>
                 </div>
-                <div>
-                  <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA || "6LddRVUrAAAAAC9OL6maOBD_dzEO6sJtH8E-A6pe"}>
+                <div>                  
                     <button
-                    type="submit"
-                    className="cursor-pointer w-full rounded-sm border border-primary bg-primary p-3 text-black transition hover:bg-primary/90"
-                  >
-                    Enviar Mensaje
-                  </button>
-                  </GoogleReCaptchaProvider>
-                 
+                      type="submit"
+                      className="cursor-pointer w-full rounded-sm border border-primary bg-primary p-3 text-black transition hover:bg-primary/90"
+                    >
+                      Enviar Mensaje
+                    </button>                  
                 </div>
               </form>
               <div>

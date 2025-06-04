@@ -3,7 +3,6 @@ export const metadata = {
   title: "Home - Simple",
   description: "Page description",
 };
-import Image from "next/image";
 import Hero from "@/components/home/hero-home";
 import Reserva from "@/components/home/reserva";
 import QuienesSomos from "@/components/home/quienes-somos";
@@ -13,8 +12,9 @@ import Empresas from "@/components/home/empresas";
 import Faqs from "@/components/home/faq";
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
-import PatronExtendido1 from "@/public/images/patron expandido 3-01.svg";
-import PatronExtendido from "@/public/images/patron_expandido.svg";
+
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+
 
 export default function Home() {   
   return (
@@ -34,7 +34,9 @@ export default function Home() {
         <QuienesSomos id="quienes-somos" />
         <Carta id="carta" />
         <Faqs id="faqs" />
-        <Contacto id="contacto" />
+        <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA || "6LddRVUrAAAAAC9OL6maOBD_dzEO6sJtH8E-A6pe"}>
+          <Contacto id="contacto" />
+        </GoogleReCaptchaProvider>
         <Reserva id="reserva" />
         <Empresas id="empresas" />
         <Footer border={true} />
