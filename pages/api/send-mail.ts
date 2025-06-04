@@ -36,6 +36,7 @@ export default async function handler(
     const info = await transporter.sendMail({
       from: `"ELAM" <> ${process.env.ZOHO_MAIL}`,
       to: email, // recipient email
+      replyTo: process.env.ZOHO_MAIL, // reply to the same email
       subject: `Mensaje de ${nombre} desde ELAM Beer Garden`,
       text: mensaje, // or html
     });
