@@ -10,7 +10,7 @@ export default async function handler(
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { email, nombre, mensaje } = req.body;
+  const { email, nombre, mensaje, captcha } = req.body;
 
   if (!email || !nombre || !mensaje) {
     return res.status(400).json({ error: "Missing required fields" });
@@ -27,6 +27,16 @@ export default async function handler(
   });
 
   try {
+    const response = await fetch(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_KEY}&response=${captcha}`,
+      { method: "POST" }
+    );
+    const data = await response.json();
+
+    if (!data.success) {
+      return res.status(400).json({ error: "Captcha inválido" });
+    }
+
     const info = await transporter.sendMail({
       from: `"ELAM" <> ${process.env.ZOHO_MAIL}`,
       to: email, // recipient email

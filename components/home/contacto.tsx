@@ -1,6 +1,7 @@
 "use client"
 // This file is part of the Elam Beer Garden project. 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contacto({ id }: { id?: string }) {
     const [form, setForm] = useState({
@@ -9,13 +10,25 @@ export default function Contacto({ id }: { id?: string }) {
     mensaje: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    
+  const [captcha, setCaptcha] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {    
     setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleCaptcha = (value: string | null) => {
+    setCaptcha(value);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+     if (!captcha) {
+      alert("Por favor, verifica el captcha.");
+      return;
+    }
 
     // Validación simple
     if (!form.nombre || !form.email || !form.mensaje) {
@@ -34,6 +47,7 @@ export default function Contacto({ id }: { id?: string }) {
         nombre: form.nombre,
         email: form.email,
         mensaje: form.mensaje,
+        captcha: captcha,
     });
 
     const requestOptions = {
@@ -45,7 +59,7 @@ export default function Contacto({ id }: { id?: string }) {
 
     fetch("https://www.elambeergarden.cl/api/send-mail", requestOptions)
       .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((result) => alert("Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto."))
       .catch((error) => console.error(error));
   };
 
@@ -95,6 +109,13 @@ export default function Contacto({ id }: { id?: string }) {
                   ></textarea>
                 </div>
                 <div>
+                  <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA || "6LddRVUrAAAAAC9OL6maOBD_dzEO6sJtH8E-A6pe"}
+                    onChange={handleCaptcha}
+                    className="my-4"
+                  />
+                  
                   <button
                     type="submit"
                     className="cursor-pointer w-full rounded-sm border border-primary bg-primary p-3 text-black transition hover:bg-primary/90"
