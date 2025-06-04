@@ -47,25 +47,17 @@ export default function Contacto({ id }: { id?: string }) {
       .then((response) => response.text())
       .then((result) => console.log(result))
       .catch((error) => console.error(error));
-
-    console.log(form);
-    // Ejemplo: fetch("/api/contact", { method: "POST", body: JSON.stringify(form) })
   };
 
   return (
     <section id={id} className="relative mx-auto max-w-6xl px-4 sm:px-6 py-20 lg:py-[120px] dark:bg-dark">
       <div className="container mx-auto">
-        <div className="flex items-center justify-center -mx-4">
-          <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
+        <div className="flex flex-col lg:flex-row items-center justify-center -mx-4">
+          <div className="mx-auto mb-[60px] max-w-[520px] text-center lg:w-1/2 xl:w-6/12">
             <div className="mb-12 max-w-[570px] lg:mb-0">              
-              <h2 className="mb-6 text-[32px] font-bold uppercase text-dark sm:text-[40px] lg:text-[36px] xl:text-[40px] dark:text-black">
+              <h2 className="text-[32px] font-bold uppercase text-dark sm:justify-center sm:text-[40px] lg:text-[36px] xl:text-[40px] dark:text-black">
                 Estas por servirte tu cerveza
-              </h2>
-              <p className="mb-9 text-base leading-relaxed text-body-color dark:text-dark-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eius tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                adiqua minim veniam quis nostrud exercitation ullamco
-              </p>
+              </h2>              
             </div>
           </div>
           <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
