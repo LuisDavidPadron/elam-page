@@ -5,6 +5,7 @@ import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 export default function Contacto({ id }: { id?: string }) {
     const { executeRecaptcha } = useGoogleReCaptcha();
+    const [isLoading, setIsLoading] = useState(false);
 
     const [form, setForm] = useState({
     nombre: "",
@@ -21,6 +22,8 @@ export default function Contacto({ id }: { id?: string }) {
     e.preventDefault();
 
     if (!executeRecaptcha) return;
+
+    setIsLoading(true);
 
     const captcha = await executeRecaptcha("submit");
 
@@ -53,8 +56,14 @@ export default function Contacto({ id }: { id?: string }) {
 
     fetch("https://www.elambeergarden.cl/api/send-mail", requestOptions)
       .then((response) => response.text())
-      .then((result) => alert("Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto."))
-      .catch((error) => console.error(error));
+      .then((result) => {
+        alert("Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.");
+        setIsLoading(false);
+      })
+      .catch((error) =>{
+        console.error(error);
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -79,6 +88,7 @@ export default function Contacto({ id }: { id?: string }) {
                     value={form.nombre}
                     onChange={handleChange}
                     placeholder="Nombre"
+                    disabled={isLoading}
                     className="w-full rounded-sm border border-stroke px-[14px] py-3 text-base color-yellow outline-hidden focus:border-primary dark:border-dark-3 dark:bg-dark dark:text-black"
                   />
                 </div>
@@ -87,6 +97,7 @@ export default function Contacto({ id }: { id?: string }) {
                     type="email"
                     name="email"
                     value={form.email}
+                    disabled={isLoading}
                     onChange={handleChange}
                     placeholder="Correo Electrónico"
                     className="w-full rounded-sm border border-stroke px-[14px] py-3 text-base color-yellow outline-hidden focus:border-primary dark:border-dark-3 dark:bg-dark dark:text-dark-6"
@@ -98,6 +109,7 @@ export default function Contacto({ id }: { id?: string }) {
                     name="mensaje"
                     placeholder="Mensaje"
                     value={form.mensaje}
+                    disabled={isLoading}
                     onChange={handleChange}
                     className="w-full resize-none rounded-sm border border-stroke px-[14px] py-3 text-base color-yellow outline-hidden focus:border-primary dark:border-dark-3 dark:bg-dark dark:text-dark-6"
                   ></textarea>
@@ -105,9 +117,10 @@ export default function Contacto({ id }: { id?: string }) {
                 <div>                  
                     <button
                       type="submit"
+                      disabled={isLoading}
                       className="cursor-pointer w-full rounded-sm border border-primary bg-primary p-3 text-black transition hover:bg-primary/90"
                     >
-                      Enviar Mensaje
+                      {isLoading ? "Enviando..." : "Enviar Mensaje"}
                     </button>                  
                 </div>
               </form>
