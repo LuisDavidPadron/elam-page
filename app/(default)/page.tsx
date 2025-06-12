@@ -17,7 +17,7 @@ import { mapHero } from "@/components/home/lib/hero.mapper";
 import { mapQuienesSomos, QuienesSomosDTO } from "@/components/home/lib/quienes.mapper";
 import { QuienesSomosBlock } from "@/components/home/types/quienes.type";
 
-export async function getHome() : Promise< HeroDTO > {
+async function getHome() : Promise< HeroDTO > {
   // Replace with your actual API call
    const res = await fetch('https://elam-backoffice.vercel.app/api/pages/684a4444aebcfd6ad3b3a21d', {
     next: { revalidate: 60 }, // ISR: revalida cada 60 segundos
@@ -28,7 +28,7 @@ export async function getHome() : Promise< HeroDTO > {
   return hero;
 }
 
-export async function getQuienesSomos() : Promise< QuienesSomosDTO > {
+async function getQuienesSomos() : Promise< QuienesSomosDTO > {
   // Replace with your actual API call
    const res = await fetch('https://elam-backoffice.vercel.app/api/pages/684a5271928dcfd7b78ef7ad', {
     next: { revalidate: 60 }, // ISR: revalida cada 60 segundos
