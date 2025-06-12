@@ -13,7 +13,13 @@ export default function HeroHome({ id, hero }: { id?: string, hero?: HeroDTO }) 
           <div className="text-center">
               <Image
                 className="mx-auto relative"
-                src={process.env.API_URL ?? 'https://elam-backoffice.vercel.app' + hero?.image?.url!}
+                src={
+                  hero?.image?.url
+                    ? hero.image.url.startsWith("http")
+                      ? hero.image.url
+                      : "https://elam-backoffice.vercel.app" + hero.image.url
+                    : "/fallback.png"
+                }
                 height={100}
                 width={hero?.image?.width!}
                 alt={hero?.image?.alt!}
