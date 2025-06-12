@@ -15,8 +15,8 @@ export default function HeroHome({ id, hero }: { id?: string, hero?: HeroDTO }) 
                 className="mx-auto relative"
                 src={process.env.API_URL ?? 'https://elam-backoffice.vercel.app' + hero?.image?.url!}
                 height={100}
-                width={hero?.image?.width}
-                alt="Logo 01"
+                width={hero?.image?.width!}
+                alt={hero?.image?.alt!}
               />
             <h1
               className="mt-10 text-black mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,black,transparent)1] md:text-6xl"
