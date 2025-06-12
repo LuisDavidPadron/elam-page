@@ -1,47 +1,30 @@
 import Image from "next/image";
+import { QuienesSomosDTO } from "./lib/quienes.mapper";
 
-import Logo01 from "@/public/images/about/image-1.jpeg";
-import Logo02 from "@/public/images/about/image-2.jpeg";
-import Logo03 from "@/public/images/about/image-3.jpeg";
-
-export default function QuienesSomos({ id }: { id?: string }) {
-  return (    
+export default function QuienesSomos({ id, quienesSomos }: { id?: string, quienesSomos?: QuienesSomosDTO }) {
+  return (
     <section id={id} className="relative mx-auto max-w-6xl px-4 sm:px-6">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap items-center justify-between">
-          <div className="w-full px-4 lg:w-6/12">
-            <div className="-mx-3 flex items-center sm:-mx-4">
-              <div className="w-full px-3 sm:px-4 xl:w-1/2">
-                <div className="py-3 sm:py-4">
+          <div className="w-full px-4 lg:w-6/12">           
+            {/* Si quieres mostrar las demás imágenes del array debajo, puedes hacer: */}            
+              <div className="flex flex-wrap mt-4">
+                {quienesSomos?.images.map((img, idx) => (
+                  <div key={img.url} className="w-1/2 p-2">
                     <Image
-                        className="w-full rounded-2xl"
-                        src={Logo01}                    
-                        alt="Logo 01"
-                    />                  
-                </div>
-                <div className="py-3 sm:py-4">
-                    <Image
-                        className="w-full rounded-2xl"
-                        src={Logo02}                    
-                        alt="Logo 02"
-                    />                  
-                </div>
-              </div>
-              <div className="w-full px-3 sm:px-4 xl:w-1/2">
-                <div className="relative z-10 my-4">
-                    <Image
-                        className="w-full rounded-2xl"                                                
-                        src={Logo03}                    
-                        alt="Logo 03"
-                    />  
-                    <div className="py-3 sm:py-4">
-                        <Image
-                            className="w-full rounded-2xl"
-                            src={Logo01}                    
-                            alt="Logo 01"
-                        />                  
-                    </div>                  
-                  <span className="absolute -bottom-7 -right-7 z-[-1]">
+                      className="w-full rounded-2xl"
+                      width={img.width || 400}
+                      height={img.height || 300}
+                      src={
+                        img.url.startsWith("http")
+                          ? img.url
+                          : "https://elam-backoffice.vercel.app" + img.url
+                      }
+                      alt={img.alt}
+                    />
+                  </div>
+                ))}
+                <span className="absolute -bottom-7 -right-7 z-[-1]">
                     <svg width="134" height="106" viewBox="0 0 134 106" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="1.66667" cy="104" r="1.66667" transform="rotate(-90 1.66667 104)" fill="#3056D3" />
                       <circle cx="16.3333" cy="104" r="1.66667" transform="rotate(-90 16.3333 104)" fill="#3056D3" />
@@ -173,33 +156,26 @@ export default function QuienesSomos({ id }: { id?: string }) {
                       <circle cx="132" cy="45.3338" r="1.66667" transform="rotate(-90 132 45.3338)" fill="#3056D3" />
                       <circle cx="132" cy="1.66683" r="1.66667" transform="rotate(-90 132 1.66683)" fill="#3056D3" />
                     </svg>
-                  </span>
-                </div>
+                </span>
               </div>
-            </div>
+            
           </div>
           <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
             <div className="mt-10 lg:mt-0">
-              <h1
-                className="text-black mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1] md:text-6xl"             
-              >
+              <h1 className="text-black mb-6 border-y text-5xl font-bold [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1] md:text-6xl">
                 Quienes Somos
-              </h1>              
+              </h1>
               <p className="text-black mb-5 text-base text-body-color">
-                En Elam Beer Garden no solo servimos cerveza, creamos experiencias. 
-                Somos un bar cervecero moderno ubicado en Ñuñoa, nacido del amor por la cerveza artesanal, la innovación y el buen ambiente. 
-                Nuestro espacio combina lo mejor de un jardín urbano con tecnología de punta para que cada visita sea única. 
-                Somos los primeros en Chile en implementar MyTapp, un sistema self-service inteligente que permite a cada persona explorar, servirse y descubrir nuevas cervezas a su ritmo. 
+                En Elam Beer Garden no solo servimos cerveza, creamos experiencias.
+                Somos un bar cervecero moderno ubicado en Ñuñoa, nacido del amor por la cerveza artesanal, la innovación y el buen ambiente.
+                Nuestro espacio combina lo mejor de un jardín urbano con tecnología de punta para que cada visita sea única.
+                Somos los primeros en Chile en implementar MyTapp, un sistema self-service inteligente que permite a cada persona explorar, servirse y descubrir nuevas cervezas a su ritmo.
               </p>
-              <p className="text-black mb-8 text-base text-body-color">                
-                Contamos con 21 líneas de cerveza artesanal, cuidadosamente seleccionadas para representar lo mejor de la escena nacional. 
-                Creemos en la comunidad, en compartir una buena pinta entre amigos, en apoyar a cervecerías independientes y en ofrecer un lugar donde la calidad y la creatividad son parte del ADN. 
+              <p className="text-black mb-8 text-base text-body-color">
+                Contamos con 21 líneas de cerveza artesanal, cuidadosamente seleccionadas para representar lo mejor de la escena nacional.
+                Creemos en la comunidad, en compartir una buena pinta entre amigos, en apoyar a cervecerías independientes y en ofrecer un lugar donde la calidad y la creatividad son parte del ADN.
                 Elam es ese punto de encuentro donde las buenas conversaciones, la música, la comida y, por supuesto, la cerveza, se juntan para dar vida a una experiencia cervecera como ninguna otra en Santiago.
               </p>
-              <a href="javascript:void(0)"
-                className=" inline-flex items-center justify-center rounded-md border border-transparent bg-primary px-7 py-3 text-center text-base font-medium text-black hover:bg-blue-200/90">
-                Visitanos
-              </a>
             </div>
           </div>
         </div>

@@ -10,7 +10,7 @@ export default function Faqs({ id }: { id?: string }) {
   };
 
   return (
-    <section id={id} className="mx-auto max-w-6xl px-4 sm:px-6 pb-12 pt-20 lg:pb-[90px] lg:pt-[120px] dark:bg-dark">
+    <section id={id} className="mx-auto max-w-6xl px-4 sm:px-6 pb-12 lg:pb-[90px] dark:bg-dark">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">

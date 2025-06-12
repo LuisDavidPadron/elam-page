@@ -1,14 +1,8 @@
 import Image from "next/image";
 import PageIllustration from "@/components/page-illustration";
-import Logo01 from "@/public/images/LOGO_ELAM.svg";
-import Logo from "@/public/images/LOGO_NEGRO.svg";
-import Avatar02 from "@/public/images/avatar-02.jpg";
-import Avatar03 from "@/public/images/avatar-03.jpg";
-import Avatar04 from "@/public/images/avatar-04.jpg";
-import Avatar05 from "@/public/images/avatar-05.jpg";
-import Avatar06 from "@/public/images/avatar-06.jpg";
+import { HeroDTO } from "./types/hero.type";
 
-export default function HeroHome({ id }: { id?: string }) {
+export default function HeroHome({ id, hero }: { id?: string, hero?: HeroDTO }) {    
   return (
     <section id={id} className="relative">
       <PageIllustration />
@@ -19,9 +13,9 @@ export default function HeroHome({ id }: { id?: string }) {
           <div className="text-center">
               <Image
                 className="mx-auto relative"
-                src={Logo}
+                src={process.env.API_URL ?? 'https://elam-backoffice.vercel.app' + hero?.image?.url!}
                 height={100}
-                width={400}
+                width={hero?.image?.width}
                 alt="Logo 01"
               />
             <h1
@@ -29,8 +23,8 @@ export default function HeroHome({ id }: { id?: string }) {
               data-aos="zoom-y-out"
               data-aos-delay={150}
             >
-              Tu Cerveza, Tu Ritmo<br className="max-lg:hidden text-black" />
-              Descubre el Autoservicio Cervecero
+              {hero?.headline}<br className="max-lg:hidden text-black" />
+              {hero?.subheadline}
             </h1>
             <div className="mx-auto max-w-3xl">
               <p
@@ -38,8 +32,7 @@ export default function HeroHome({ id }: { id?: string }) {
                 data-aos="zoom-y-out"
                 data-aos-delay={300}
               >
-                 Explora una increíble variedad de cervezas artesanales, sírvete exactamente lo que quieras, 
-                cuando quieras y ¡sin esperas! Una experiencia única, divertida y totalmente bajo tu control te espera.            
+                {hero?.copy}
               </p>             
             </div>
           </div>

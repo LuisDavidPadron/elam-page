@@ -12,26 +12,44 @@ import Empresas from "@/components/home/empresas";
 import Faqs from "@/components/home/faq";
 import Header from "@/components/ui/header";
 import Footer from "@/components/ui/footer";
+import { HeroDTO, RawHeroBlock } from "@/components/home/types/hero.type";
+import { mapHero } from "@/components/home/lib/hero.mapper";
+import { mapQuienesSomos, QuienesSomosDTO } from "@/components/home/lib/quienes.mapper";
+import { QuienesSomosBlock } from "@/components/home/types/quienes.type";
 
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+export async function getHome() : Promise< HeroDTO > {
+  // Replace with your actual API call
+   const res = await fetch('https://elam-backoffice.vercel.app/api/pages/684a4444aebcfd6ad3b3a21d', {
+    next: { revalidate: 60 }, // ISR: revalida cada 60 segundos
+  });
+  const raw: RawHeroBlock = await res.json();
+  const hero = mapHero(raw);
+  
+  return hero;
+}
 
+export async function getQuienesSomos() : Promise< QuienesSomosDTO > {
+  // Replace with your actual API call
+   const res = await fetch('https://elam-backoffice.vercel.app/api/pages/684a5271928dcfd7b78ef7ad', {
+    next: { revalidate: 60 }, // ISR: revalida cada 60 segundos
+  });
+  const raw: QuienesSomosBlock = await res.json();
+  const quienesSomos = mapQuienesSomos(raw);
+  
+  return quienesSomos;
+}
 
-export default function Home() {   
+export default async function Home() {   
+
+  // The hero prop can be used to pass data to the Hero component if needed
+  const [hero, quienesSomos] = await Promise.all([getHome(), getQuienesSomos()])
+  
   return (
-    <>
-      {/* Full background wrapper */}
-      <div className="relative w-full color-yellow">
-        {/* Full background image */}
-        {/* <Image
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
-          src={PatronExtendido}
-          alt="Background Pattern"
-          layout="fill" // Ensures the image fills the entire container
-        /> */}
-        {/* Page content */}        
+    <>      
+      <div className="relative w-full color-yellow">          
         <Header />
-        <Hero id="principal" />
-        <QuienesSomos id="quienes-somos" />
+        <Hero id="principal" hero={hero}/>
+        <QuienesSomos id="quienes-somos" quienesSomos={quienesSomos}/>
         <Carta id="carta" />
         <Faqs id="faqs" />        
         <Contacto id="contacto" />        

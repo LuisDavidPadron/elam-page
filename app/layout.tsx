@@ -4,7 +4,6 @@ import "./css/style.css";
 import React, { useEffect, useState } from "react";
 import { Inter } from "next/font/google";
 import LoadingSpinner from "@/components/ui/loading-spinner";
-import Image from "next/image";
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
