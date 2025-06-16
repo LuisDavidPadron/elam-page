@@ -15,6 +15,7 @@ import { HeroDTO, RawHeroBlock } from "@/components/home/types/hero.type";
 import { mapHero } from "@/components/home/lib/hero.mapper";
 import { mapQuienesSomos, QuienesSomosDTO } from "@/components/home/lib/quienes.mapper";
 import { QuienesSomosBlock } from "@/components/home/types/quienes.type";
+import BannerElam from "@/components/home/banner-elam";
 
 async function getHome() : Promise<HeroDTO> {
   // Replace with your actual API call
@@ -50,6 +51,7 @@ export default async function Home() {
       <div className="relative w-full color-yellow">          
         <Header />
         <Hero id="principal" hero={hero}/>
+        {/* <BannerElam id="banner" /> */}
         <QuienesSomos id="quienes-somos" quienesSomos={quienesSomos}/>
         <Carta id="carta"/>
         <Faqs id="faqs" />        

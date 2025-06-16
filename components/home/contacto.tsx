@@ -2,6 +2,8 @@
 // This file is part of the Elam Beer Garden project. 
 import React, { useState, useRef } from "react";
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import Image from "next/image";
+import Stripes from "../../public/images/image.png"; // Adjust the path and filename as needed
 
 export default function Contacto({ id }: { id?: string }) {
     const { executeRecaptcha } = useGoogleReCaptcha();
@@ -76,10 +78,14 @@ export default function Contacto({ id }: { id?: string }) {
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-center -mx-4">
           <div className="mx-auto mb-[60px] max-w-[520px] text-center lg:w-1/2 xl:w-6/12">
-            <div className="mb-12 max-w-[570px] lg:mb-0">              
-              <h2 className="text-[32px] font-bold uppercase text-dark sm:justify-center sm:text-[40px] lg:text-[36px] xl:text-[40px] dark:text-black">
-                Estas por servirte tu cerveza
-              </h2>              
+            <div className="mb-12 max-w-[570px] lg:mb-0">  
+                <Image
+                  className="mx-auto"
+                  src={Stripes}
+                  alt="Stripes"
+                  width={600}
+                  height={400}
+                />                                                
             </div>
           </div>
           <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
