@@ -42,6 +42,14 @@ export default function LinkTree() {
           </a>
         </div>
         <div 
+          onClick={() => window.open("https://wa.link/o672nu", "_blank")} 
+          className="cursor-pointer link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center"
+        >
+          <a className="text-white font-semibold cursor-pointer inline-flex items-center gap-2 justify-center">
+            Whatsapp <FaWhatsapp />
+          </a>
+        </div>                
+        <div 
           onClick={() => window.open("https://maps.app.goo.gl/eGfGBa4UcoVgr47c9", "_blank")} 
           className="cursor-pointer link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center"
         >
