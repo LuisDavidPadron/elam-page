@@ -79,7 +79,7 @@ export default function Carta({ id }: { id?: string }) {
           {Array.from({ length: carta?.totalPages! }, (_, i) => (
             <button
               key={i}
-              className={`px-3 py-1 rounded ${carta?.page === i + 1 ? "bg-yellow-700 text-white" : "bg-gray-200"}`}
+              className={`cursor-pointer px-3 py-1 rounded ${carta?.page === i + 1 ? "bg-yellow-700 text-white" : "bg-gray-200"}`}
               onClick={() => setPage(i + 1)}
               disabled={carta?.page === i + 1}
             >
