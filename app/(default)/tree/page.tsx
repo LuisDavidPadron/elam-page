@@ -50,7 +50,8 @@ export default function LinkTree() {
           </a>
         </div>
         <div 
-          onClick={() => window.open("https://wokiapp.com/reservas/elam-beer-garden", "_blank")} className="cursor-pointer link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
+          onClick={() => window.open("https://wokiapp.com/reservas/elam-beer-garden", "_blank")} 
+          className="cursor-pointer link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center">
           <a            
             className="text-white font-semibold cursor-pointer"
           >

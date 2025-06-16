@@ -63,8 +63,9 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link
-                href="#carta"
+              <Link              
+                href="https://drive.google.com/file/d/1x9qcR3XOR_zX9H9nRpP0YNHHLIjEO-gK/view?usp=drive_link"                
+                target="_blank"
                 className="btn-sm bg-white text-gray-800 shadow-sm hover:bg-gray-50"
               >
                 Carta
@@ -72,7 +73,8 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="#reserva"
+                href="https://wokiapp.com/reservas/elam-beer-garden"
+                target="_blank"
                 className="btn-sm bg-white text-gray-800 shadow-sm hover:bg-gray-50"
               >
                 Reserva
@@ -83,7 +85,7 @@ export default function Header() {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="absolute top-16 left-0 w-full bg-white shadow-lg md:hidden">
+          <div className="absolute rounded-ee-2xl top-16 left-0 w-full color-yellow shadow-2xl md:hidden max-h-80 overflow-y-auto">
             <ul className="flex flex-col items-center gap-3 py-4">
               <li>
                 <Link
@@ -123,9 +125,8 @@ export default function Header() {
 
               <li>
                 <Link
-                  href="#reserva"
-                  className="btn-sm bg-white text-gray-800 shadow-sm hover:bg-gray-50"
-                  onClick={() => setMobileMenuOpen(false)}
+                  href="https://www.elambeergarden.cl/tree#:~:text=Reserva-,Carta,-Encu%C3%A9ntranos%20aqu%C3%AD"
+                  className="btn-sm bg-white text-gray-800 shadow-sm hover:bg-gray-50"                  
                 >
                   Reserva
                 </Link>

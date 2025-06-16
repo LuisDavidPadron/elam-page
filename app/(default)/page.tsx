@@ -1,4 +1,3 @@
-
 export const metadata = {
   title: "Home - Simple",
   description: "Page description",
@@ -17,7 +16,7 @@ import { mapHero } from "@/components/home/lib/hero.mapper";
 import { mapQuienesSomos, QuienesSomosDTO } from "@/components/home/lib/quienes.mapper";
 import { QuienesSomosBlock } from "@/components/home/types/quienes.type";
 
-async function getHome() : Promise< HeroDTO > {
+async function getHome() : Promise<HeroDTO> {
   // Replace with your actual API call
    const res = await fetch('https://elam-backoffice.vercel.app/api/pages/684a4444aebcfd6ad3b3a21d', {
     next: { revalidate: 60 }, // ISR: revalida cada 60 segundos
@@ -28,7 +27,7 @@ async function getHome() : Promise< HeroDTO > {
   return hero;
 }
 
-async function getQuienesSomos() : Promise< QuienesSomosDTO > {
+async function getQuienesSomos() : Promise<QuienesSomosDTO> {
   // Replace with your actual API call
    const res = await fetch('https://elam-backoffice.vercel.app/api/pages/684a5271928dcfd7b78ef7ad', {
     next: { revalidate: 60 }, // ISR: revalida cada 60 segundos
@@ -40,9 +39,11 @@ async function getQuienesSomos() : Promise< QuienesSomosDTO > {
 }
 
 export default async function Home() {   
-
   // The hero prop can be used to pass data to the Hero component if needed
-  const [hero, quienesSomos] = await Promise.all([getHome(), getQuienesSomos()])
+  const [ hero, quienesSomos ] = await Promise.all([
+    getHome(),
+    getQuienesSomos(),    
+  ])
   
   return (
     <>      
@@ -50,7 +51,7 @@ export default async function Home() {
         <Header />
         <Hero id="principal" hero={hero}/>
         <QuienesSomos id="quienes-somos" quienesSomos={quienesSomos}/>
-        <Carta id="carta" />
+        <Carta id="carta"/>
         <Faqs id="faqs" />        
         <Contacto id="contacto" />        
         <Reserva id="reserva" />
