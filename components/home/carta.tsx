@@ -47,7 +47,7 @@ export default function Carta({ id }: { id?: string }) {
         <h2 className="text-center text-3xl font-bold text-black md:text-4xl mb-12">
           Nuestra Carta
         </h2>
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
           {carta?.docs.map((item) => (
             <div
               key={item.id}
@@ -75,7 +75,7 @@ export default function Carta({ id }: { id?: string }) {
             </div>
           ))}
         </div>
-        <div className="mt-8 flex justify-center gap-2">
+        <div className="mt-10 flex justify-center gap-2">
           {Array.from({ length: carta?.totalPages! }, (_, i) => (
             <button
               key={i}

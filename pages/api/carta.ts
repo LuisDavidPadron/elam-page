@@ -6,7 +6,7 @@ export default async function handler(
 ) {
   const { page = 1, limit = 10 } = req.query;
   const apiRes = await fetch(
-    `${process.env.API_URL}/api/posts/?limit=${limit}&page=${page}`
+    `${process.env.API_URL ?? "http://localhost:3001"}/api/posts/?limit=${limit}&page=${page}`
   );
   const data = await apiRes.json();
   res.status(200).json(data);
