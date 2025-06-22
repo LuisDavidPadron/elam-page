@@ -32,7 +32,7 @@ export default function Carta({ id }: { id?: string }) {
     });  
       
     // Construye la query string según si hay categoría seleccionada
-    const categoryQuery = selectCategory ? `where[categories][equals]=${selectCategory}&` : "";
+    const categoryQuery = selectCategory ? `where[categories][equals]=${selectCategory}` : "";
 
     fetch(`/api/carta?limit=${limit}&page=${page}&category=${categoryQuery}`)
       .then(async (res) => {
