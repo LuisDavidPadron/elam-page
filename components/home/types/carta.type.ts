@@ -57,3 +57,14 @@ export interface CartaDTO {
   heroImage: CartaMedia;
   populatedAuthors: any[];
 }
+
+// --------------------------------
+
+export interface Category {
+  createdAt: string;
+  updatedAt: string;
+  title: string;
+  slug: string;
+  slugLock: boolean;
+  id: string;
+}

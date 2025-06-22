@@ -4,10 +4,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { page = 1, limit = 10, category = "" } = req.query;
-
+  //   const { page = 1, limit = 10 } = req.query;
   const apiRes = await fetch(
-    `${process.env.API_URL ?? "http://localhost:3001"}/api/posts/?${category}&limit=${limit}&page=${page}`
+    `${process.env.API_URL ?? "http://localhost:3001"}/api/categories`
   );
   const data = await apiRes.json();
   res.status(200).json(data);

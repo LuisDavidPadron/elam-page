@@ -16,6 +16,7 @@ import { mapHero } from "@/components/home/lib/hero.mapper";
 import { mapQuienesSomos, QuienesSomosDTO } from "@/components/home/lib/quienes.mapper";
 import { QuienesSomosBlock } from "@/components/home/types/quienes.type";
 import BannerElam from "@/components/home/banner-elam";
+import CategoryDropdown from "@/components/ui/inputs/dropdown";
 
 async function getHome() : Promise<HeroDTO> {
   // Replace with your actual API call
@@ -54,7 +55,7 @@ export default async function Home() {
         {/* <BannerElam id="banner" /> */}
         <QuienesSomos id="quienes-somos" quienesSomos={quienesSomos}/>
         <Carta id="carta"/>
-        <Faqs id="faqs" />        
+        <Faqs id="faqs" />          
         <Contacto id="contacto" />        
         <Reserva id="reserva" />
         <Empresas id="empresas" />

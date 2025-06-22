@@ -2,24 +2,47 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { CartaPagination } from "@/components/home/lib/carta.mapper";
+import { CartaPagination, CategoryPagination } from "@/components/home/lib/carta.mapper";
+import CategoryDropdown from "../ui/inputs/dropdown";
+
+
 
 export default function Carta({ id }: { id?: string }) {
   const [page, setPage] = useState(1);
   const [limit] = useState(6);
   const [carta, setCarta] = useState<CartaPagination | null>(null);
+  const [category, setCategory] = useState<CategoryPagination | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [selectCategory, setSelectCategory] = useState('');
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`/api/carta?limit=${limit}&page=${page}`)
+    // Fetch the carta data from the API
+    // Adjust the URL as per your API endpoint
+    
+    fetch(`/api/categories`)
+    .then(async (res) => {
+      const raw: CategoryPagination = await res.json();
+      return raw;
+    })
+    .then(setCategory)
+    .catch((error) => {
+      console.error("Error fetching categories:", error);
+      setCategory(null);
+    });  
+      
+    // Construye la query string según si hay categoría seleccionada
+    const categoryQuery = selectCategory ? `where[categories][equals]=${selectCategory}&` : "";
+
+    fetch(`/api/carta?limit=${limit}&page=${page}&category=${categoryQuery}`)
       .then(async (res) => {
         const raw: CartaPagination = await res.json();
         return raw;
       })
       .then(setCarta)
       .finally(() => setIsLoading(false));
-  }, [page, limit]);
+
+  }, [page, limit, selectCategory]);
 
   if (isLoading) {
     return (
@@ -47,6 +70,14 @@ export default function Carta({ id }: { id?: string }) {
         <h2 className="text-center text-3xl font-bold text-black md:text-4xl mb-12">
           Nuestra Carta
         </h2>
+        <div className="mb-8 flex justify-center">
+          <p className="text-gray-600 text-lg mr-4">Filtrar por categoría</p> 
+          <CategoryDropdown 
+            selectedCategory={selectCategory}
+            onChangeAction={(categoryId) => setSelectCategory(categoryId)}
+            categories={category?.docs.map((cat) => ({ id: cat.id, title: cat.title })) || []}
+          />
+        </div>
         <div className="grid gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
           {carta?.docs.map((item) => (
             <div
