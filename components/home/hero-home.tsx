@@ -1,6 +1,8 @@
 import Image from "next/image";
 import PageIllustration from "@/components/page-illustration";
 import { HeroDTO } from "./types/hero.type";
+import Logo from "@/public/images/LOGO_NEGRO.svg";
+
 
 export default function HeroHome({ id, hero }: { id?: string, hero?: HeroDTO }) {    
   return (
@@ -13,13 +15,7 @@ export default function HeroHome({ id, hero }: { id?: string, hero?: HeroDTO }) 
           <div className="text-center">
               <Image
                 className="mx-auto relative"
-                src={
-                  hero?.image?.url
-                    ? hero.image.url.startsWith("http")
-                      ? hero.image.url
-                      : "https://elam-backoffice.vercel.app" + hero.image.url
-                    : "/fallback.png"
-                }
+                src={Logo}
                 height={100}
                 width={hero?.image?.width!}
                 alt={hero?.image?.alt!}

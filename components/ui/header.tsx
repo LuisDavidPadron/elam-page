@@ -73,7 +73,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="https://wokiapp.com/reservas/elam-beer-garden"
+                href="https://w.app/elambeergarden"
                 target="_blank"
                 className="btn-sm bg-white text-gray-800 shadow-sm hover:bg-gray-50"
               >
@@ -125,7 +125,9 @@ export default function Header() {
 
               <li>
                 <Link
-                  href="https://www.elambeergarden.cl/tree#:~:text=Reserva-,Carta,-Encu%C3%A9ntranos%20aqu%C3%AD"
+                  href="https://w.app/elambeergarden"
+                  target="_blank"
+                  // href="https://www.elambeergarden.cl/tree#:~:text=Reserva-,Carta,-Encu%C3%A9ntranos%20aqu%C3%AD"
                   className="btn-sm bg-white text-gray-800 shadow-sm hover:bg-gray-50"                  
                 >
                   Reserva

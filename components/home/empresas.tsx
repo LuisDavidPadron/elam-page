@@ -3,93 +3,122 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
+import { CartaMedia } from "./types/carta.type";
 
-// Asegúrate de que el array 'empresas' esté definido aquí o importado correctamente
-const basePath = "@/images/brands/";
+export interface Empresa {
+  createdAt: string;
+  updatedAt: string;
+  title: string;
+  image: CartaMedia;
+  enlaceExterno: string;
+  id: string;
+}
 
-import GrayRidsWhite from "@/public/images/brands/graygrids-white.svg";
-import GrayRids from "@/public/images/brands/graygrids.svg";
+export interface EmpresaPagination {
+  docs: Empresa[];
+  totalDocs: number;
+  limit: number;
+  totalPages: number;
+  page: number;
+  pagingCounter: number;
+  hasPrevPage: boolean;
+  hasNextPage: boolean;
+  prevPage: number | null;
+  nextPage: number | null;
+}
 
-import LineIcons from "@/public/images/brands/lineicons.svg";
-import LineIconsWhite from "@/public/images/brands/lineIcons-white.svg";
-
-import UiDeckWhite from "@/public/images/brands/uideck-white.svg";
-import UiDeck from "@/public/images/brands/uideck.svg";
-
-import AyroUi from "@/public/images/brands/ayroui.svg";
-import AyroUiWhite from "@/public/images/brands/ayroui-white.svg";
-
-const empresas = [
-  { id: 1, href: "#", src: GrayRids, srcDark: GrayRidsWhite, alt: "Grayrids" },
-  {
-    id: 2,
-    href: "#",
-    src: LineIcons,
-    srcDark: LineIconsWhite,
-    alt: "Lineicons",
-  },
-  { id: 3, href: "#", src: UiDeck, srcDark: UiDeckWhite, alt: "UIdeck" },
-  { id: 4, href: "#", src: AyroUi, srcDark: AyroUiWhite, alt: "Ayroui" },
-  { id: 5, href: "#", src: GrayRids, srcDark: GrayRidsWhite, alt: "Grayrids" },
-  {
-    id: 6,
-    href: "#",
-    src: LineIcons,
-    srcDark: LineIconsWhite,
-    alt: "Lineicons",
-  },
-  { id: 7, href: "#", src: UiDeck, srcDark: UiDeckWhite, alt: "UIdeck" },
-  { id: 8, href: "#", src: AyroUi, srcDark: AyroUiWhite, alt: "Ayroui" },
-  { id: 9, href: "#", src: GrayRids, srcDark: GrayRidsWhite, alt: "Grayrids" },
-  {
-    id: 10,
-    href: "#",
-    src: LineIcons,
-    srcDark: LineIconsWhite,
-    alt: "Lineicons",
-  },
-  { id: 11, href: "#", src: UiDeck, srcDark: UiDeckWhite, alt: "UIdeck" },
-  { id: 12, href: "#", src: AyroUi, srcDark: AyroUiWhite, alt: "Ayroui" },
-  { id: 13, href: "#", src: GrayRids, srcDark: GrayRidsWhite, alt: "Grayrids" },
-  {
-    id: 14,
-    href: "#",
-    src: LineIcons,
-    srcDark: LineIconsWhite,
-    alt: "Lineicons",
-  },
-  { id: 15, href: "#", src: UiDeck, srcDark: UiDeckWhite, alt: "UIdeck" },
-  { id: 16, href: "#", src: AyroUi, srcDark: AyroUiWhite, alt: "Ayroui" },
-  { id: 17, href: "#", src: GrayRids, srcDark: GrayRidsWhite, alt: "Grayrids" },
-  {
-    id: 18,
-    href: "#",
-    src: LineIcons,
-    srcDark: LineIconsWhite,
-    alt: "Lineicons",
-  },
-  { id: 19, href: "#", src: UiDeck, srcDark: UiDeckWhite, alt: "UIdeck" },
-  { id: 20, href: "#", src: AyroUi, srcDark: AyroUiWhite, alt: "Ayroui" },
-  { id: 21, href: "#", src: GrayRids, srcDark: GrayRidsWhite, alt: "Grayrids" },
-  {
-    id: 22,
-    href: "#",
-    src: LineIcons,
-    srcDark: LineIconsWhite,
-    alt: "Lineicons",
-  },
-  { id: 23, href: "#", src: UiDeck, srcDark: UiDeckWhite, alt: "UIdeck" },
-  { id: 24, href: "#", src: AyroUi, srcDark: AyroUiWhite, alt: "Ayroui" },
-];
+// const empresas = [
+//   { id: 1, href: "#", src: GrayRids, srcDark: GrayRidsWhite, alt: "Grayrids" },
+//   {
+//     id: 2,
+//     href: "#",
+//     src: LineIcons,
+//     srcDark: LineIconsWhite,
+//     alt: "Lineicons",
+//   },
+//   { id: 3, href: "#", src: UiDeck, srcDark: UiDeckWhite, alt: "UIdeck" },
+//   { id: 4, href: "#", src: AyroUi, srcDark: AyroUiWhite, alt: "Ayroui" },
+//   { id: 5, href: "#", src: GrayRids, srcDark: GrayRidsWhite, alt: "Grayrids" },
+//   {
+//     id: 6,
+//     href: "#",
+//     src: LineIcons,
+//     srcDark: LineIconsWhite,
+//     alt: "Lineicons",
+//   },
+//   { id: 7, href: "#", src: UiDeck, srcDark: UiDeckWhite, alt: "UIdeck" },
+//   { id: 8, href: "#", src: AyroUi, srcDark: AyroUiWhite, alt: "Ayroui" },
+//   { id: 9, href: "#", src: GrayRids, srcDark: GrayRidsWhite, alt: "Grayrids" },
+//   {
+//     id: 10,
+//     href: "#",
+//     src: LineIcons,
+//     srcDark: LineIconsWhite,
+//     alt: "Lineicons",
+//   },
+//   { id: 11, href: "#", src: UiDeck, srcDark: UiDeckWhite, alt: "UIdeck" },
+//   { id: 12, href: "#", src: AyroUi, srcDark: AyroUiWhite, alt: "Ayroui" },
+//   { id: 13, href: "#", src: GrayRids, srcDark: GrayRidsWhite, alt: "Grayrids" },
+//   {
+//     id: 14,
+//     href: "#",
+//     src: LineIcons,
+//     srcDark: LineIconsWhite,
+//     alt: "Lineicons",
+//   },
+//   { id: 15, href: "#", src: UiDeck, srcDark: UiDeckWhite, alt: "UIdeck" },
+//   { id: 16, href: "#", src: AyroUi, srcDark: AyroUiWhite, alt: "Ayroui" },
+//   { id: 17, href: "#", src: GrayRids, srcDark: GrayRidsWhite, alt: "Grayrids" },
+//   {
+//     id: 18,
+//     href: "#",
+//     src: LineIcons,
+//     srcDark: LineIconsWhite,
+//     alt: "Lineicons",
+//   },
+//   { id: 19, href: "#", src: UiDeck, srcDark: UiDeckWhite, alt: "UIdeck" },
+//   { id: 20, href: "#", src: AyroUi, srcDark: AyroUiWhite, alt: "Ayroui" },
+//   { id: 21, href: "#", src: GrayRids, srcDark: GrayRidsWhite, alt: "Grayrids" },
+//   {
+//     id: 22,
+//     href: "#",
+//     src: LineIcons,
+//     srcDark: LineIconsWhite,
+//     alt: "Lineicons",
+//   },
+//   { id: 23, href: "#", src: UiDeck, srcDark: UiDeckWhite, alt: "UIdeck" },
+//   { id: 24, href: "#", src: AyroUi, srcDark: AyroUiWhite, alt: "Ayroui" },
+// ];
 
 export default function Empresas({ id }: { id?: string }) {
-  // ... (el resto de tu componente con <Swiper>...)
+  const [isLoading, setIsLoading] = useState(true);
+  
+  const [empresas, setEmpresas] = useState<Empresa[] | null>([]);
+  
+  useEffect(() => {
+    setIsLoading(true);
+    // Fetch the carta data from the API
+    // Adjust the URL as per your API endpoint
+    
+    fetch(`/api/empresas`)
+    .then(async (res) => {
+      const raw: EmpresaPagination = await res.json();
+      return raw.docs;
+    })
+    .then(setEmpresas)
+    .catch((error) => {
+      console.error("Error fetching empresas:", error);
+      setEmpresas(null);
+    });  
+  }, []);
+
   return (
     <section
       id={id}
-      className="mx-auto max-w-6xl px-4 sm:px-6 pb-12 pt-20 lg:pb-[90px] lg:pt-[120px] dark:bg-dark"
+      className="mx-auto max-w-6xl px-4 sm:px-6 pb-12 dark:bg-dark"
     >
       <div className="container mx-auto">
         <div
@@ -121,28 +150,40 @@ export default function Empresas({ id }: { id?: string }) {
             }}
             className="mySwiper p-7"
           >
-            {empresas.map((empresa) => (
+            {empresas!.map((empresa) => (
               <SwiperSlide
                 key={empresa.id}
-                className="flex items-center justify-center"
+                className="flex items-center justify-center w-100% h-full"
               >
                 <a
-                  href={empresa.href}
+                  href={empresa.enlaceExterno}
                   className="flex h-full w-full items-center justify-center py-5 opacity-70 transition hover:opacity-100"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <div className="relative h-10 w-[130px] lg:w-[150px]">
+                  <div className="relative h-50 w-50 md:h-24 md:w-24 lg:h-40 lg:w-40">
                     <Image
-                      src={empresa.srcDark}
-                      alt={empresa.alt}
+                      src={
+                        empresa.image?.url
+                          ? empresa.image?.url.startsWith("http")
+                            ? empresa.image?.url
+                            : "https://elam-backoffice.vercel.app" + empresa.image?.url
+                          : "/fallback.png"
+                      }
+                      alt={empresa.image.alt || empresa.title}
                       fill // Usar 'fill' en lugar de layout='fill' en versiones más nuevas
                       style={{ objectFit: "contain" }} // Reemplaza objectFit="contain"
                       className="block dark:hidden"
                     />
                     <Image
-                      src={empresa.src}
-                      alt={empresa.alt}
+                      src={
+                        empresa.image?.url
+                          ? empresa.image?.url.startsWith("http")
+                            ? empresa.image?.url
+                            : "https://elam-backoffice.vercel.app" + empresa.image?.url
+                          : "/fallback.png"
+                      }
+                      alt={empresa.image.alt || empresa.title}
                       fill
                       style={{ objectFit: "contain" }}
                       className="hidden dark:block"
