@@ -10,7 +10,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
           <li>
             <Link
               className="text-white transition hover:text-gray-600"
-              href="https://w.app/elambeergarden"
+              href="https://wa.link/rzisr6"
               target="_blank"
               aria-label="Whatsapp"
             >
@@ -20,7 +20,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
           <li>
             <Link
               className="text-white transition hover:text-gray-600"
-              href="https://w.app/elambeergarden"
+              href="https://wa.link/rzisr6"
               target="_blank"
               aria-label="TikTok"
             >
@@ -117,7 +117,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 <li>
                   <Link
                     className="text-white transition hover:text-gray-600"
-                    href="https://w.app/elambeergarden"
+                    href="https://wa.link/rzisr6"
                     target="_blank"
                     aria-label="Whatsapp"
                   >                   
@@ -127,7 +127,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 <li>
                   <Link
                     className="text-white transition hover:text-gray-600"
-                    href="https://w.app/elambeergarden"
+                    href="https://wa.link/rzisr6"
                     target="_blank"
                     aria-label="TikTok"
                   >                   
