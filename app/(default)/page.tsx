@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Home - Simple",
+  title: "Elam Beer Garden - Cerveza Artesanal y Comida Internacional",
   description: "Page description",
 };
 import Hero from "@/components/home/hero-home";
@@ -15,8 +15,8 @@ import { HeroDTO, RawHeroBlock } from "@/components/home/types/hero.type";
 import { mapHero } from "@/components/home/lib/hero.mapper";
 import { mapQuienesSomos, QuienesSomosDTO } from "@/components/home/lib/quienes.mapper";
 import { QuienesSomosBlock } from "@/components/home/types/quienes.type";
-import BannerElam from "@/components/home/banner-elam";
-import CategoryDropdown from "@/components/ui/inputs/dropdown";
+// import BannerElam from "@/components/home/banner-elam";
+// import CategoryDropdown from "@/components/ui/inputs/dropdown";
 
 async function getHome() : Promise<HeroDTO> {
   // Replace with your actual API call
