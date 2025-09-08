@@ -12,6 +12,7 @@ export interface Empresa {
   createdAt: string;
   updatedAt: string;
   title: string;
+  orden: number;
   image: CartaMedia;
   enlaceExterno: string;
   id: string;
@@ -106,7 +107,7 @@ export default function Empresas({ id }: { id?: string }) {
     fetch(`/api/empresas`)
     .then(async (res) => {
       const raw: EmpresaPagination = await res.json();
-      return raw.docs;
+      return raw.docs.sort((a, b) => a.orden - b.orden);
     })
     .then(setEmpresas)
     .catch((error) => {
