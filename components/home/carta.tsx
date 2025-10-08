@@ -164,7 +164,7 @@ export default function Carta({ id }: { id?: string }) {
             </div>            
           </>
         )}
-        {category!.totalDocs == category!.totalPages && (
+        {category && category!.totalDocs == category!.totalPages && (
           <> 
             <div className="text-center text-gray-600">
               No hay categorías disponibles.
