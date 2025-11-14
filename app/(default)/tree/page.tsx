@@ -66,7 +66,7 @@ export default function LinkTree() {
             Reserva
           </a>
         </div>
-        <div onClick={() => window.open("https://drive.google.com/file/d/1fWP6hLduulUThtXFQacY3qxi-3cBlPZY/view?usp=drive_link", "_blank")} className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center cursor-pointer">
+        <div onClick={() => window.open("https://drive.google.com/file/d/1Idsm0e97eP1_ef9sdC00dz1fqHKY79rc/view?usp=drive_link", "_blank")} className="link bg-gray-800 hover:bg-blue-600 transition-colors rounded-lg p-4 text-center cursor-pointer">
           <a
             className="text-white font-semibold cursor-pointer"
           >
